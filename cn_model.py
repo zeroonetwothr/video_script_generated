@@ -23,9 +23,9 @@ def generate_script(subject, video_length, creativity):
         ]
     )
     models = ChatOpenAI(
-        model=st.secrets("DOUBAO_MODEL"),
-        api_key=st.secrets("DOUBAO_API"),
-        base_url=st.secrets("DOUBAO_BASE")
+        model=os.getenv("DOUBAO_MODEL"),
+        api_key=os.getenv("DOUBAO_API"),
+        base_url=os.getenv("DOUBAO_BASE")
     )
     title_chain = title_template | models
     script_chain = script_template | models
