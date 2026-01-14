@@ -1,0 +1,7 @@
+import streamlit as st
+if "a" not in st.session_state:
+    st.session_state.a=0
+clicked=st.button("add one")
+if clicked:
+    st.session_state.a+=1
+    st.write(st.session_state.a)
